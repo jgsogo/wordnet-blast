@@ -17,6 +17,7 @@ install:
   - conan install boost/1.66.0@conan/stable
 
 test_script:
+  - dir
   - mkdir build && cd build
-  - cmake .. -DBOOST_ROOT:PATH=D:\ -DBUILD_TESTS:BOOL=ON -DCMAKE_INSTALL_PREFIX:PATH=install
+  - cmake .. -DBOOST_ROOT:PATH=D:\boost -DBUILD_TESTS:BOOL=ON -DCMAKE_INSTALL_PREFIX:PATH=install
   - cmake --build . --target install
