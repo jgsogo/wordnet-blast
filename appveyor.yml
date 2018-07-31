@@ -18,7 +18,7 @@ install:
 
 test_script:
   - dir
-  - mkdir build && cd build
   - for /f %%i in ('python boost_root.py') do set BOOST_ROOT=%%i
+  - mkdir build && cd build
   - cmake .. -DBOOST_ROOT:PATH=%BOOST_ROOT% -DBUILD_TESTS:BOOL=ON -DCMAKE_INSTALL_PREFIX:PATH=install
   - cmake --build . --target install

@@ -11,8 +11,8 @@ if [[ "$(uname -s)" == 'Darwin' ]]; then
 fi
 
 ls -la
-mkdir build && cd build
 BOOST_ROOT="$(python boost_root.py)"
+mkdir build && cd build
 cmake .. -DBOOST_ROOT:PATH=$BOOST_ROOT -DBUILD_TESTS:BOOL=ON -DCMAKE_INSTALL_PREFIX:PATH=install
 cmake --build . --target install
 
