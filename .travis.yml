@@ -1,7 +1,18 @@
+language: python
+os: linux
 dist: trusty
-sudo: false
-language: cpp
-  
+sudo: true
+
+matrix:
+  include:
+    # Clang 5.0
+    - env: CXX=clang++-5.0 CC=clang-5.0
+      addons: { apt: { packages: ["clang-5.0", "valgrind"], sources: ["ubuntu-toolchain-r-test", "llvm-toolchain-precise-5.0"] } }
+    # GCC 6
+    - env: CXX=g++-6  CC=gcc-6
+      addons: { apt: { packages: ["g++-6", "valgrind"], sources: ["ubuntu-toolchain-r-test"] } }
+      
+      
 script:
   - pip.exe install conan --upgrade
   - conan user
