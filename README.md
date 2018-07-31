@@ -1,4 +1,8 @@
 
+
+[![Build status](https://ci.appveyor.com/api/projects/status/56yr3dbvm00nl0nt?svg=true)](https://ci.appveyor.com/project/jgsogo/wordnet-blast)
+[![Build Status](https://travis-ci.org/jgsogo/wordnet-blast.svg?branch=master)](https://travis-ci.org/jgsogo/wordnet-blast)
+
 WordNet Blast
 =============
 
