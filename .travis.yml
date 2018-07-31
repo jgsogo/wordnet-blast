@@ -7,14 +7,14 @@ matrix:
   include:
     # Clang 5.0
     - env: CXX=clang++-5.0 CC=clang-5.0
-      addons: { apt: { packages: ["clang-5.0", "valgrind"], sources: ["ubuntu-toolchain-r-test", "llvm-toolchain-precise-5.0"] } }
+      addons: { apt: { packages: ["clang-5.0", "valgrind"], sources: ["ubuntu-toolchain-r-test", "llvm-toolchain-trusty-5.0"] } }
     # GCC 6
     - env: CXX=g++-6  CC=gcc-6
       addons: { apt: { packages: ["g++-6", "valgrind"], sources: ["ubuntu-toolchain-r-test"] } }
       
       
 script:
-  - pip.exe install conan --upgrade
+  - pip install conan --upgrade
   - conan user
   - conan install boost/1.66.0@conan/stable
   - ls -la
