@@ -54,13 +54,10 @@ before_install:
     - eval "${MATRIX_EVAL}"
 
 install:
-  - pip install conan --upgrade
-  - conan user
+  - chmod +x .travis/install.sh
+  - ./.travis/install.sh
 
 script:
-  - ls -la
-  - cd wordnet-blast
-  - mkdir build && cd build
-  - cmake .. -DBUILD_TESTS:BOOL=ON -DCMAKE_INSTALL_PREFIX:PATH=install
-  - cmake --build . --target install
+  - chmod +x .travis/run.sh
+  - ./.travis/run.sh
 
