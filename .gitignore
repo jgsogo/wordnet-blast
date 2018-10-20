@@ -27,7 +27,7 @@
 *.out
 *.app
 
-
+.idea/
 build
 secret.txt
 CMakeCache.txt
