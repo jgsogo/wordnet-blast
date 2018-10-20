@@ -1,4 +1,6 @@
-from conans import ConanFile, CMake
+
+import os
+from conans import ConanFile, CMake, tools
 
 
 class HelloConan(ConanFile):
@@ -28,3 +30,8 @@ class HelloConan(ConanFile):
 
     def package_info(self):
         self.cpp_info.libs = ["wnb"]
+
+    def deploy(self):
+        data_folder = os.path.join(self.package_folder, 'data')
+        self.output.info("Download WordNet 3.1 database to package folder")
+        tools.get("http://wordnetcode.princeton.edu/wn3.1.dict.tar.gz", destination=data_folder)
